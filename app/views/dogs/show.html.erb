@@ -1,0 +1,9 @@
+<% if @dog.kind_of? Array %>
+  <% @dog.breed.each do |dog| %>
+    <p><%= I18n.t(dog, scope: %i[activerecord attributes dog/breed]) %></p>
+  <% end %>
+<% else %>
+  <p><%= I18n.t(@dog.breed, scope: %i[activerecord attributes dog/breed]) %></p>
+<% end %>
+
+<p><%= I18n.t(@dog.name, scope: %i[activerecord attributes dog/name]) %></p>

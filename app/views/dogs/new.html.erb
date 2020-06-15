@@ -1,0 +1,18 @@
+<h1><%= t('.title') %></h1>
+
+<% if @dog.errors.full_messages.any? %>
+  <p>Erros:</p>
+  <ul>
+    <% @dog.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with model: @dog do |f| %>
+  <%= f.label :breed %>
+  <%= f.select :breed, Dog.breeds.map { |breed| [I18n.t(breed, scope: %i[activerecord attributes dog/breed]), breed] }, { include_hidden: false }, multiple: true %>
+  <%= f.label :name %>
+  <%= f.select :name, Dog.names.map { |name| [I18n.t(name, scope: %i[activerecord attributes dog/name]), name] } %>
+  <%= f.submit %>
+<% end %>

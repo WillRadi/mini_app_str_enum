@@ -1,0 +1,6 @@
+<h2><%= link_to 'novo cão', new_dog_path %></h2>
+<% @dogs.each do |dog| %>
+  <%= dog.id %></br>
+  <%= dog.breed %>
+  <hr>
+<% end %>

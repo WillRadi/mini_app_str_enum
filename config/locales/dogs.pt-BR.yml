@@ -1,0 +1,20 @@
+pt-BR:
+  activerecord:
+    models:
+      dog:
+        one: Cachorro
+        other: Cachorros
+    attributes:
+      dog:
+        breed: Raça
+        name: Nome
+      dog/breed:
+        pug: Pug gordinho
+        bulldog: Bulldog bolado
+        labrador: Labrador legal
+      dog/name:
+        tobias: Cão Tobias
+        helena: Heleninha
+  dogs:
+    new:
+      title: 'Cadastrar cachorrinho'
