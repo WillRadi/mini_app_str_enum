@@ -7,6 +7,10 @@ class DogsController < ApplicationController
     @dog = Dog.new
   end
 
+  def edit
+    @dog = Dog.find(params[:id])
+  end
+
   def create
     @dog = Dog.new dog_parammeters
     if @dog.save
@@ -15,6 +19,13 @@ class DogsController < ApplicationController
     end
 
     render :new
+  end
+
+  def update
+    @dog = Dog.find(params[:id])
+    return redirect_to @dog if @dog.update(dog_parammeters)
+
+    render :edit
   end
 
   def show

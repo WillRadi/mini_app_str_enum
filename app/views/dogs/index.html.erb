@@ -2,5 +2,6 @@
 <% @dogs.each do |dog| %>
   <%= dog.id %></br>
   <%= dog.breed %>
+  <%= link_to 'Visualizar', dog %>
   <hr>
 <% end %>
