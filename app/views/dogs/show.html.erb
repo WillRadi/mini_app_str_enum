@@ -1,12 +1,28 @@
 <%= link_to 'Editar', edit_dog_path(@dog.id) %>
 <%= link_to 'Voltar', dogs_path %>
-<% if @dog.kind_of? Array %>
+
+<h1><%= @dog.title %></h1>
+
+<% if @dog.breed.any? %>
   <% @dog.breed.each do |dog| %>
     <p><%= I18n.t(dog, scope: %i[activerecord attributes dog/breed]) %></p>
   <% end %>
 <% else %>
   <p><%= I18n.t(@dog.breed, scope: %i[activerecord attributes dog/breed]) %></p>
 <% end %>
+
+<% if @dog.color.any? %>
+  <% @dog.color.each do |dog| %>
+    <p><%= I18n.t(dog, scope: %i[activerecord attributes dog/color]) %></p>
+  <% end %>
+<% else %>
+  <p><%= I18n.t(@dog.color, scope: %i[activerecord attributes dog/breed]) %></p>
+<% end %>
+
 <% if !@dog.name.blank? %>
   <p><%= I18n.t(@dog.name, scope: %i[activerecord attributes dog/name]) %></p>
+<% end %>
+
+<% if !@dog.size.blank? %>
+  <p><%= I18n.t(@dog.size, scope: %i[activerecord attributes dog/size]) %></p>
 <% end %>

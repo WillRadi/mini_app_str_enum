@@ -10,9 +10,20 @@
 <% end %>
 
 <%= form_with model: @dog do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
   <%= f.label :breed %>
   <%= f.select :breed, Dog.breeds.map { |breed| [I18n.t(breed, scope: %i[activerecord attributes dog/breed]), breed] }, { include_hidden: false }, multiple: true %>
+  <br>
+  <%= f.label :color %>
+  <%= f.select :color, Dog.colors.map { |color| [I18n.t(color, scope: %i[activerecord attributes dog/color]), color] }, { include_hidden: false }, multiple: true %>
+  <br>
   <%= f.label :name %>
   <%= f.select :name, Dog.names.map { |name| [I18n.t(name, scope: %i[activerecord attributes dog/name]), name] }, include_blank: true %>
+  <br>
+  <%= f.label :size %>
+  <%= f.select :size, Dog.sizes.map { |size| [I18n.t(size, scope: %i[activerecord attributes dog/size]), size] }, include_blank: true %>
+  <br>
   <%= f.submit %>
 <% end %>

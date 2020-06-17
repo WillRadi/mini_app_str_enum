@@ -6,8 +6,10 @@ pt-BR:
         other: Cachorros
     attributes:
       dog:
-        breed: Raça
-        name: Nome
+        breed: Raça - Mult/Não obr
+        name: Nome - Simp/Não obr
+        color: Cor - Mult/Obr
+        size: Tamanho - Simp/Obr
       dog/breed:
         pug: Pug gordinho
         bulldog: Bulldog bolado
@@ -15,6 +17,12 @@ pt-BR:
       dog/name:
         tobias: Cão Tobias
         helena: Heleninha
+      dog/color:
+        black: Preto
+        white: Branco
+      dog/size:
+        small: Pequeno
+        big: Grande
   dogs:
     new:
       title: 'Cadastrar cachorrinho'
